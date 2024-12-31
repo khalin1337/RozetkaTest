@@ -1,4 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -34,6 +35,7 @@ public class ResultPage {
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
+    @Step("Перехід на сторінку товару")
     public void passAgeLimit(){
         waitForLoad(ageLimit());
         ageLimit().click();
@@ -44,6 +46,7 @@ public class ResultPage {
     }
 
     /*Метод перевірки назви обраного продукту*/
+    @Step("Перевірка назва обраного продукту містить {keyword}")
     public boolean isProductPageContainKeyword(String keyword){
         waitForLoad(tittleProductPage());
         return tittleProductPage().getText().toLowerCase().contains(keyword.trim().toLowerCase());

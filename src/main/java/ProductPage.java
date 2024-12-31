@@ -1,4 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -35,6 +36,7 @@ public class ProductPage {
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
+    @Step("Додавання продукту у кошик")
     public void clickBuyButton(){
         waitForLoad(byuButton());
         byuButton().click();
@@ -44,6 +46,7 @@ public class ProductPage {
     }
 
     /*Метод перевірки чи містить продукт у кошику коректну назву*/
+    @Step("Перевірка чи містить продукт у кошику {keyword}")
     public boolean isCartPageContainKeyword(String keyword){
         waitForLoad(cartProductTile());
         return cartProductTile().getText().toLowerCase().contains(keyword.trim().toLowerCase());

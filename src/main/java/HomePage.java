@@ -1,5 +1,6 @@
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -47,11 +48,13 @@ public class HomePage {
     public void clickSearchButton(){
         searchInput().pressEnter();
     }
+    @Step("Введення назви: \"{keyword}\" товару у пошукове поле")
     public void enterSearchKeyword(String keyword){
         searchInput().val(keyword);
     }
 
     /*Метод перевірки чи завантажилася наступна сторінка*/
+    @Step("Перевірка чи завантажилась сторінка результатів")
     public boolean isResultLoaded() {
         waitForLoad("//li[contains(@class,'catalog-grid__cell')]");
         return !searchingResult().isEmpty();

@@ -1,4 +1,5 @@
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -33,24 +34,28 @@ public class ShoppingCartPage {
     }
 
     /*Метод який використовується для очікування загрузки елементів */
-    public void waitForLoad(String xp){
-        $(By.xpath(xp)).shouldBe(visible);
+    public void waitForLoad(SelenideElement element){
+        element.shouldBe(visible);
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
     public void clickMenuToggleButton() {
-
+        waitForLoad(menuToggleButton());
         menuToggleButton().click();
     }
+    @Step("Видалення з кошику продукту")
     public void clickDeleteButton() {
-        waitForLoad("//rz-trash-icon//button");
+        waitForLoad(deleteButton());
         deleteButton().click();
     }
+    @Step("Відкриття кошику")
     public void clickCartButton() {
+        waitForLoad(cartButton());
         cartButton().click();
     }
 
     /*Метод перевірки чи порожній кошик*/
+    @Step("Перевірка чи порожній кошик після видалення продукту")
     public boolean isCartIsEmpty() {
         return emptyCartHeading().getText().equals("Кошик порожній");
     }
