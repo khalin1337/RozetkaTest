@@ -46,8 +46,7 @@ public class ProductPage {
     }
 
     /*Метод перевірки чи містить продукт у кошику коректну назву*/
-    @Step("\n" +
-            "Checking if the product in the cart contains {keyword}")
+    @Step("Checking if the product in the cart contains {keyword}")
     public boolean isCartPageContainKeyword(String keyword){
         waitForLoad(cartProductTile());
         return cartProductTile().getText().toLowerCase().contains(keyword.trim().toLowerCase());
