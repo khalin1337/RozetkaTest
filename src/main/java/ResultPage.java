@@ -53,7 +53,7 @@ public class ResultPage {
     public boolean isProductPageContainKeyword(String keyword) {
         waitForLoad(tittleProductPage());
         return tittleProductPage().getText().toLowerCase()
-                .contains(keyword.trim().toLowerCase());
+                        .contains(keyword.trim().toLowerCase());
     }
 
 }

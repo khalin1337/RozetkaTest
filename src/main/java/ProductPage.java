@@ -53,6 +53,6 @@ public class ProductPage {
     public boolean isCartPageContainKeyword(String keyword){
         waitForLoad(cartProductTile());
         return cartProductTile().getText().toLowerCase()
-                .contains(keyword.trim().toLowerCase());
+                        .contains(keyword.trim().toLowerCase());
     }
 }
