@@ -35,18 +35,18 @@ public class ResultPage {
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
-    @Step("Перехід на сторінку товару")
     public void passAgeLimit(){
         waitForLoad(ageLimit());
         ageLimit().click();
     }
+    @Step("Go to the product page")
     public void clickOnElement() {
         waitForLoad(resultElement());
         resultElement().click();
     }
 
     /*Метод перевірки назви обраного продукту*/
-    @Step("Перевірка назва обраного продукту містить {keyword}")
+    @Step("Check the name of the selected product contains {keyword}")
     public boolean isProductPageContainKeyword(String keyword){
         waitForLoad(tittleProductPage());
         return tittleProductPage().getText().toLowerCase().contains(keyword.trim().toLowerCase());

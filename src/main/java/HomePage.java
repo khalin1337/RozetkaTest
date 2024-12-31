@@ -22,9 +22,10 @@ public class HomePage {
     }
 
     /*Метод який відкривае головну сторінку сайту*/
+    @Step("Open the main page")
     public void openHomePage(){
         open("https://rozetka.com.ua/");
-        getWebDriver().manage().window().maximize();
+        //getWebDriver().manage().window().maximize();
         waitForLoad("//div[@class='list']");
     }
 
@@ -45,16 +46,17 @@ public class HomePage {
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
+    @Step("Search by name")
     public void clickSearchButton(){
         searchInput().pressEnter();
     }
-    @Step("Введення назви: \"{keyword}\" товару у пошукове поле")
+    @Step("Entering the name: \"{keyword}\" of the product in the search field")
     public void enterSearchKeyword(String keyword){
         searchInput().val(keyword);
     }
 
     /*Метод перевірки чи завантажилася наступна сторінка*/
-    @Step("Перевірка чи завантажилась сторінка результатів")
+    @Step("Checking if the results page has loaded")
     public boolean isResultLoaded() {
         waitForLoad("//li[contains(@class,'catalog-grid__cell')]");
         return !searchingResult().isEmpty();

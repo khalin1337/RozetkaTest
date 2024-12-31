@@ -43,19 +43,19 @@ public class ShoppingCartPage {
         waitForLoad(menuToggleButton());
         menuToggleButton().click();
     }
-    @Step("Видалення з кошику продукту")
+    @Step("Deleting from shopping cart")
     public void clickDeleteButton() {
         waitForLoad(deleteButton());
         deleteButton().click();
     }
-    @Step("Відкриття кошику")
+    @Step("Open shopping cart")
     public void clickCartButton() {
         waitForLoad(cartButton());
         cartButton().click();
     }
 
     /*Метод перевірки чи порожній кошик*/
-    @Step("Перевірка чи порожній кошик після видалення продукту")
+    @Step("Checking if the cart is empty after removing the product")
     public boolean isCartIsEmpty() {
         return emptyCartHeading().getText().equals("Кошик порожній");
     }

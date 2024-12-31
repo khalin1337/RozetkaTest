@@ -36,7 +36,7 @@ public class ProductPage {
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
-    @Step("Додавання продукту у кошик")
+    @Step("Adding a product to the cart")
     public void clickBuyButton(){
         waitForLoad(byuButton());
         byuButton().click();
