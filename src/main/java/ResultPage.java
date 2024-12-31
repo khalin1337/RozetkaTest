@@ -25,7 +25,7 @@ public class ResultPage {
     public  SelenideElement ageLimit(){
         return $(By.xpath("//input[@class='button button--medium popup-content__button button--green ng-star-inserted']"));
     }
-    public  SelenideElement tittleProductPage(){
+    public  SelenideElement tittleProductPage() {
         return $(By.xpath("//h1"));
     }
 
@@ -47,9 +47,10 @@ public class ResultPage {
 
     /*Метод перевірки назви обраного продукту*/
     @Step("Check the name of the selected product contains {keyword}")
-    public boolean isProductPageContainKeyword(String keyword){
+    public boolean isProductPageContainKeyword(String keyword) {
         waitForLoad(tittleProductPage());
-        return tittleProductPage().getText().toLowerCase().contains(keyword.trim().toLowerCase());
+        return tittleProductPage().getText().toLowerCase()
+                .contains(keyword.trim().toLowerCase());
     }
 
 }

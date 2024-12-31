@@ -11,6 +11,7 @@ public class AddingToShoppingCartTest {
     @Test(dataProvider = "Keywords",priority = 3,dependsOnMethods = {"ProductPageTest.productPageTest"})
     public void addingToShoppingCartTest(String keyword) {
         ProductPage Product = ProductPage.getProductPage();
+
         Product.clickBuyButton();
         boolean TittleCheck = Product.isCartPageContainKeyword(keyword);
         Product.clickCartContinueButton();

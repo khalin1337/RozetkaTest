@@ -25,33 +25,30 @@ public class HomePage {
     @Step("Open the main page")
     public void openHomePage(){
         open("https://rozetka.com.ua/");
-        //getWebDriver().manage().window().maximize();
+        getWebDriver().manage().window().maximize();
         waitForLoad("//div[@class='list']");
     }
 
     /*Локатори елементів на сторінці*/
-    public SelenideElement searchInput(){
+    public SelenideElement searchInput() {
         return $(By.xpath("//input[contains(@class,'search-form__input')]"));
     }
-    public SelenideElement searchButton(){
-        return $(By.xpath("//button[contains(@class,'search-form__submit')]"));
-    }
-    public ElementsCollection searchingResult(){
+    public ElementsCollection searchingResult() {
         return $$(By.xpath("//li[contains(@class,'catalog-grid__cell')]"));
     }
 
     /*Метод який використовується для очікування загрузки елементів */
-    public void waitForLoad(String xp){
+    public void waitForLoad(String xp) {
         $(By.xpath(xp)).shouldBe(visible);
     }
 
     /*Методи взаємодії з елеиентами на сторінці */
     @Step("Search by name")
-    public void clickSearchButton(){
+    public void clickSearchButton() {
         searchInput().pressEnter();
     }
     @Step("Entering the name: \"{keyword}\" of the product in the search field")
-    public void enterSearchKeyword(String keyword){
+    public void enterSearchKeyword(String keyword) {
         searchInput().val(keyword);
     }
 

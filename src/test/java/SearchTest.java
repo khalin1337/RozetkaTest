@@ -11,10 +11,12 @@ public class SearchTest {
 
     @Test(dataProvider = "Keywords",priority = 1)
     public void searchTest(String keyword) {
-        HomePage Home = HomePage.getHomePage();
-        Home.openHomePage();
-        Home.enterSearchKeyword(keyword);
-        Home.clickSearchButton();
-        Assert.assertTrue(Home.isResultLoaded(),"Page do not loaded");
+        HomePage homepage = HomePage.getHomePage();
+
+        homepage.openHomePage();
+        homepage.enterSearchKeyword(keyword);
+        homepage.clickSearchButton();
+
+        Assert.assertTrue(homepage.isResultLoaded(),"Page do not loaded");
     }
 }

@@ -37,11 +37,11 @@ public class ProductPage {
 
     /*Методи взаємодії з елеиентами на сторінці */
     @Step("Adding a product to the cart")
-    public void clickBuyButton(){
+    public void clickBuyButton() {
         waitForLoad(byuButton());
         byuButton().click();
     }
-    public void clickCartContinueButton(){
+    public void clickCartContinueButton() {
         cartContinueButton().click();
     }
 
@@ -49,6 +49,7 @@ public class ProductPage {
     @Step("Checking if the product in the cart contains {keyword}")
     public boolean isCartPageContainKeyword(String keyword){
         waitForLoad(cartProductTile());
-        return cartProductTile().getText().toLowerCase().contains(keyword.trim().toLowerCase());
+        return cartProductTile().getText().toLowerCase()
+                .contains(keyword.trim().toLowerCase());
     }
 }
