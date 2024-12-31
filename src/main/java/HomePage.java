@@ -10,10 +10,13 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 /**Клас HomePage описує взаємодію зі сторінкою магазину Rozetka(https://rozetka.com.ua/)
  * на яку користувач потрапяє при заході на сайт*/
 public class HomePage {
+
     /*Конструктор класу реалізований за допомогою патерну Одинак,
     який запобігає створенню непотрібних додаткових об'єктів класу*/
     private static HomePage home;
+
     private HomePage() {}
+
     public static HomePage getHomePage() {
         if(home == null) {
             home= new HomePage();

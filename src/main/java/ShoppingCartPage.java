@@ -11,7 +11,9 @@ public class ShoppingCartPage {
     /*Конструктор класу реалізований за допомогою патерну Одинак,
     який запобігає створенню непотрібних додаткових об'єктів класу*/
     private static ShoppingCartPage cartPage;
+
     private ShoppingCartPage() {}
+
     public static ShoppingCartPage getShoppingCartPage() {
         if(cartPage == null) {
             cartPage = new ShoppingCartPage();

@@ -8,10 +8,13 @@ import static com.codeborne.selenide.Selenide.$;
 /**Клас ProductPage описує взаємодію зі сторінкою магазину Rozetka(https://rozetka.com.ua/)
  * на яку користувач потрапяє при виборі конкретного продукту з каталогу*/
 public class ProductPage {
+
     /*Конструктор класу реалізований за допомогою патерну Одинак,
     який запобігає створенню непотрібних додаткових об'єктів класу*/
     private static ProductPage productPage;
+
     private ProductPage() {}
+
     public static ProductPage getProductPage() {
         if(productPage == null) {
             productPage = new ProductPage();

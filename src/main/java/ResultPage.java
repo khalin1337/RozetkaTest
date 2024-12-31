@@ -7,10 +7,13 @@ import static com.codeborne.selenide.Selenide.$;
 /**Клас ResultPage описує взаємодію зі сторінкою пошуку магазину Rozetka(https://rozetka.com.ua/)
  * на яку користувач потрапяє при пошуку за ключовим словом*/
 public class ResultPage {
+
     /*Конструктор класу реалізований за допомогою патерну Одинак,
     який запобігає створенню непотрібних додаткових об'єктів класу*/
     private static ResultPage resultPage;
+
     private ResultPage() {}
+
     public static ResultPage getResultPage() {
         if(resultPage == null) {
             resultPage = new ResultPage();
