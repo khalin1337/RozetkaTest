@@ -10,11 +10,11 @@ public class AddingToShoppingCartTest {
     }
     @Test(dataProvider = "Keywords",priority = 3,dependsOnMethods = {"ProductPageTest.productPageTest"})
     public void addingToShoppingCartTest(String keyword) {
-        ProductPage Product = ProductPage.getProductPage();
+        ProductPage product = ProductPage.getProductPage();
 
-        Product.clickBuyButton();
-        boolean TittleCheck = Product.isCartPageContainKeyword(keyword);
-        Product.clickCartContinueButton();
+        product.clickBuyButton();
+        boolean TittleCheck = product.isCartPageContainKeyword(keyword);
+        product.clickCartContinueButton();
 
         Assert.assertTrue(TittleCheck,String.format("Cart page do not contain keyword:\"%s\"",keyword));
     }
